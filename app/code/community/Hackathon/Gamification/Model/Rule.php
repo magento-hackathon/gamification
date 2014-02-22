@@ -12,8 +12,10 @@ class Hackathon_Gamification_Model_Rule extends Mage_Core_Model_Abstract
     }
 
     public function validate() {
-        $validatorAlias = (string)Mage::getConfig()->getNode('global/hackathon_gamification/events/' . $this->getEventName())->validator;
+        $xpath = Mage::helper('hackathon_gamification/rule')->getObserverXPath($this->getEventName());
+        $validatorAlias = (string)current(Mage::getConfig()->getXpath($xpath . '/validator'));
         if ($validatorAlias) {
+            Mage::log($validatorAlias);
             $validator = Mage::getModel($validatorAlias);
             return $validator->validate(json_decode($this->getCondition()));
         }

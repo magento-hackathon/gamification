@@ -15,26 +15,19 @@ Just install module, there's a sample data added, which gains you some nice pony
 To modify that behavior the rules and achievements are managed in the hackathon_gamification_rule table.
 To track a new event you have to add following snippet for your event in the config.xml to observe that:
 
-    <checkout_cart_add_product_complete>
-        <observers>
-            <hackathon_gamification>
-                <class>hackathon_gamification/observer</class>
-                <method>trackEvent</method>
-            </hackathon_gamification>
-        </observers>
-    </checkout_cart_add_product_complete>
-
-To make a new event manageable in the adminhtml add following to global node:
-
-    <hackathon_gamification>
-        <events>
-            <sales_quote_remove_item>
-                <label>Remove product from cart</label>
-                <condition_form /> <!-- conditions form in adminhtml -->
-                <validator>hackathon_gamification/validator_score_min</validator> <!-- i.e. do not go into a negative score range -->
-            </sales_quote_remove_item>
-        </events>
-    </hackathon_gamification>
+    <frontend> <!-- we only consider observers in frontend, we don'T want gamification in adminhtml (yet) -->
+        <controller_action_predispatch_catalogsearch_result_index>
+            <observers>
+                <hackathon_gamification> <!-- it has to be that name -->
+                    <class>hackathon_gamification/observer</class> <!-- always trigger that class -->
+                    <method>trackEvent</method> <!-- and that method, it's doing all the magic -->
+                    <label>Search query</label> <!-- add a label so your admin knows what this is about -->
+                    <condition_form>hackathon_gamification/adminhtml_validator_search_query_form</condition_form> <!-- add a condition form, if you need it for this event, e.g. only track a special search word in the search event -->
+                    <validator>hackathon_gamification/validator_search_query</validator> <!-- add a validator for your conditions you entered -->
+                </hackathon_gamification>
+            </observers>
+        </controller_action_predispatch_catalogsearch_result_index>
+    </frontend>
 
 To add a new achievement which can be configured use following sample:
 

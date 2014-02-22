@@ -51,23 +51,6 @@
             </model_save_after>
         </events>
         <hackathon_gamification>
-            <events>
-                <checkout_cart_add_product_complete>
-                    <label>Put product in cart</label>
-                    <condition_form />
-                    <validator />
-                </checkout_cart_add_product_complete>
-                <sales_quote_remove_item>
-                    <label>Remove product from cart</label>
-                    <condition_form />
-                    <validator>hackathon_gamification/validator_score_min</validator>
-                </sales_quote_remove_item>
-                <controller_action_predispatch_catalogsearch_result_index>
-                    <label>Search query</label>
-                    <condition_form>hackathon_gamification/adminhtml_validator_search_query_form</condition_form>
-                    <validator>hackathon_gamification/validator_search_query</validator>
-                </controller_action_predispatch_catalogsearch_result_index>
-            </events>
             <achievements>
                 <score_increment>
                     <label>Increment score</label>
@@ -95,6 +78,9 @@
                     <hackathon_gamification>
                         <class>hackathon_gamification/observer</class>
                         <method>trackEvent</method>
+                        <label>Put product in cart</label>
+                        <condition_form />
+                        <validator />
                     </hackathon_gamification>
                 </observers>
             </checkout_cart_add_product_complete>
@@ -103,6 +89,9 @@
                     <hackathon_gamification>
                         <class>hackathon_gamification/observer</class>
                         <method>trackEvent</method>
+                        <label>Remove product from cart</label>
+                        <condition_form />
+                        <validator>hackathon_gamification/validator_score_min</validator>
                     </hackathon_gamification>
                 </observers>
             </sales_quote_remove_item>
@@ -111,6 +100,9 @@
                     <hackathon_gamification>
                         <class>hackathon_gamification/observer</class>
                         <method>trackEvent</method>
+                        <label>Search query</label>
+                        <condition_form>hackathon_gamification/adminhtml_validator_search_query_form</condition_form>
+                        <validator>hackathon_gamification/validator_search_query</validator>
                     </hackathon_gamification>
                 </observers>
             </controller_action_predispatch_catalogsearch_result_index>

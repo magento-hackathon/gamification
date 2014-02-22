@@ -13,19 +13,25 @@ class Hackathon_Gamification_Helper_Rule extends Mage_Core_Helper_Abstract
         return $return;
     }
 
+    public function getObserverXPath($eventName = '*') {
+        return 'frontend/events/' . $eventName . '/observers/hackathon_gamification';
+    }
+
     public function getEventsAsOptions()
     {
         $return = array();
-        $events = Mage::getConfig()->getNode('global/hackathon_gamification/events')->asArray();
-        foreach ($events as $eventName => $configNode) {
-            $return[$eventName] = $configNode['label'];
+        $events = Mage::getConfig()->getXpath($this->getObserverXPath());
+        foreach ($events as $configNode) {
+            /* @var Mage_Core_Model_Config_Element $configNode */
+            $eventName = $configNode->getParent()->getParent()->getName();
+            $return[$eventName] = $configNode->label;
         }
         return $return;
     }
 
-    public function getEventForm($sEventName)
+    public function getEventForm($eventName)
     {
-        $alias = (string)Mage::getConfig()->getNode('global/hackathon_gamification/events/' . $sEventName . '/condition_form');
+        $alias = (string)current(Mage::getConfig()->getXpath($this->getObserverXPath($eventName) . '/condition_form'));
         if ($alias) {
             $block = Mage::app()->getLayout()->createBlock(trim($alias));
             if ($block) {
