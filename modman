@@ -1,0 +1,9 @@
+/app/code/community/Hackathon/Gamification /app/code/community/Hackathon/Gamification
+/app/design/adminhtml/default/default/layout/hackathon_gamification.xml /app/design/adminhtml/default/default/layout/hackathon_gamification.xml
+/app/design/adminhtml/default/default/template/hackathon_gamification /app/design/adminhtml/default/default/template/shackathon_gamification
+/app/design/frontend/base/default/layout/hackathon_gamification.xml /app/design/frontend/base/default/layout/hackathon_gamification.xml
+/app/design/frontend/base/default/template/hackathon_gamification /app/design/frontend/base/default/template/hackathon_gamification
+/app/etc/modules/Hackathon_Gamification.xml /app/etc/modules/Hackathon_Gamification.xml
+/app/locale/de_DE/Hackathon_Gamification.csv /app/locale/de_DE/Hackathon_Gamification.csv
+/app/locale/en_US/Hackathon_Gamification.csv /app/locale/en_US/Hackathon_Gamification.csv
+/skin/frontend/base/default/css/hackathon_gamification/style.css /skin/frontend/base/default/css/hackathon_gamification/style.css

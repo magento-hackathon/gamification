@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <!--
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/hackathon_gamification/style.css</name></action>
+        </reference>
+        <reference name="right">
+            <remove name="right.poll"/>
+        </reference>
+        -->
+    </default>
+</layout>
