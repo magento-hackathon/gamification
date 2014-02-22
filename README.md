@@ -20,7 +20,7 @@ tbd
 Installation Instructions
 -------------------------
 Just install module, there's a sample data added, which gains you some nice ponys whenever you add something into the cart.
-To modify that behavior the rules and achievements are managed in the hackathong_gamification_rule table.
+To modify that behavior the rules and achievements are managed in the hackathon_gamification_rule table.
 To track a new event you have to add following snippet for your event in the config.xml:
 
     <checkout_cart_add_product_complete>
