@@ -48,6 +48,8 @@ class Hackathon_Gamification_Block_Adminhtml_Rule_Grid extends Mage_Adminhtml_Bl
                         ->__('Event Name'),
                 'align'  => 'left',
                 'index'  => 'event_name',
+                'type'    => 'options',
+                'options' => Mage::helper('hackathon_gamification/rule')->getEventsAsOptions(),
                 'width'  => '350px',
             )
         );
@@ -73,7 +75,7 @@ class Hackathon_Gamification_Block_Adminhtml_Rule_Grid extends Mage_Adminhtml_Bl
                 'align'  => 'left',
                 'index'  => 'achievement_model',
                 'type'    => 'options',
-                'options' => Mage::helper('hackathon_gamification/rule')->getAchievementModelsOptions(),
+                'options' => Mage::helper('hackathon_gamification/rule')->getAchievementModelsOptions()
             )
         );
 
