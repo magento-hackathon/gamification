@@ -89,18 +89,7 @@
         </hackathon_gamification>
     </global>
     <frontend>
-        <!--
-        <routers>
-           <hackathon_gamification>
-               <use>standard</use>
-               <args>
-                   <module>Hackathon_Gamification</module>
-                   <frontName>mgt</frontName>
-               </args>
-           </hackathon_gamification>
-        </routers>
-        -->
-        <events>
+       <events>
             <checkout_cart_add_product_complete>
                 <observers>
                     <hackathon_gamification>
@@ -182,18 +171,4 @@
         </routers>
     </admin>
 
-    <!--
-    <crontab>
-        <jobs>
-            <hackathon_gamification_cron>
-                <schedule>
-                    <cron_expr>0,45 * * * *</cron_expr>
-                </schedule>
-                <run>
-                    <model>hackathon_gamification/observer::methodName</model>
-                </run>
-            </hackathon_gamification_cron>
-        </jobs>
-    </crontab>
-    -->
 </config>
