@@ -4,11 +4,10 @@ class Hackathon_Gamification_Helper_Rule extends Mage_Core_Helper_Abstract
     public function getEventsForForm()
     {
         $return = array();
-        $events = Mage::getConfig()->getNode('global/hackathon_gamification/events')->asArray();
-        foreach ($events as $eventName => $configNode) {
+        foreach ($this->getEventsAsOptions() as $eventName => $label) {
             $return[] = array(
                 'value' => $eventName,
-                'label' => $configNode['label'],
+                'label' => $label,
             );
         }
         return $return;
