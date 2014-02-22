@@ -2,9 +2,9 @@
 class Hackathon_Gamification_Model_Achievement_Score_Decrement extends Mage_Core_Model_Abstract
 {
     public function gain() {
-        $session = Mage::getSingleton('core/session');
-        $session->setAchievementScore(
-            $session->getAchievementScore() - 1
+        $score = Mage::getSingleton('hackathon_gamification/achievement_score');
+        $score->set(
+            $score->get() - 1
         );
     }
 
