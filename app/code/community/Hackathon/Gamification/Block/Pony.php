@@ -22,11 +22,7 @@ class Hackathon_Gamification_Block_Pony extends Mage_Core_Block_Template
 {
     protected $_template = 'hackathon_gamification/pony.phtml';
 
-    protected function _toHtml() {
-        if (Mage::getSingleton('core/session')->getAchievementBadge()) {
-            return parent::_toHtml();
-        } else {
-            return '';
-        }
+    public function getPonyAmount() {
+        return (int)Mage::getSingleton('core/session')->getAchievementScore();
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <default>
-        <!--reference name="right">
+        <reference name="right">
             <block name="hackathon_gamification_badge" type="hackathon_gamification/badge" as="badge" before="-"/>
-        </reference -->
+        </reference>
         <reference name="content">
             <block name="hackathon_gamification_pony" type="hackathon_gamification/pony" as="pony" before="-"/>
         </reference>
