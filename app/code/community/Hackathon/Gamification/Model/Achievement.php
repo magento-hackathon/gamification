@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: airbone
- * Date: 22.02.14
- * Time: 14:47
- * To change this template use File | Settings | File Templates.
- */
+abstract class Hackathon_Gamification_Model_Achievement extends Mage_Core_Model_Abstract
+{
+    abstract public function gain();
+}

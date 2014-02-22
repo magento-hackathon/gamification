@@ -35,13 +35,8 @@ class Hackathon_Gamification_Model_Observer
             ->addFieldToFilter('event_name', $observer->getEvent()->getName());
         foreach ($rules->getItems() as $rule) {
             // TODO check that user not already gained that achievement
-            if ($rule->isConditionTrue($observer)) {
-                Mage::dispatchEvent(
-                    'hackathon_gamification_achievement',
-                    array(
-                         'rule' => $rule,
-                    )
-                );
+            if ($rule->validate($observer)) {
+                $rule->getAchievement()->gain();
             }
         }
     }

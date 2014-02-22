@@ -1,8 +1,6 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: airbone
- * Date: 22.02.14
- * Time: 14:53
- * To change this template use File | Settings | File Templates.
- */
+class Hackathon_Gamification_Model_Achievement_Badge extends Hackathon_Gamification_Model_Achievement {
+    public function gain() {
+        Mage::getSingleton('core/session')->setAchievementBadge(true);
+    }
+}
