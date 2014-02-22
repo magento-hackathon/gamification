@@ -36,6 +36,17 @@ To make a new event manageable in the adminhtml add following to global node:
         </events>
     </hackathon_gamification>
 
+To add a new achievement which can be configured use following sample:
+
+    <hackathon_gamification>
+        <achievements>
+            <score_set>
+                <label>Set absolute score</label>
+                <class>hackathon_gamification/achievement_score_set</class>
+            </score_set>
+        </achievements>
+    </hackathon_gamification>
+
 Uninstallation
 --------------
 - Remove all files
