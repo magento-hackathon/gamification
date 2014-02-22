@@ -21,4 +21,12 @@
 class Hackathon_Gamification_Block_Badge extends Mage_Core_Block_Template
 {
     protected $_template = 'hackathon_gamification/badge.phtml';
+
+    protected function _toHtml() {
+        if (Mage::getSingleton('core/session')->getAchievementBadge()) {
+            return parent::_toHtml();
+        } else {
+            return '';
+        }
+    }
 }

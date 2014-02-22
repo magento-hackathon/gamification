@@ -72,6 +72,14 @@
                     </hackathon_gamification>
                 </observers>
             </checkout_cart_add_product_complete>
+            <hackathon_gamification_achievement>
+                <observers>
+                    <hackathon_gamification_achievement>
+                        <class>hackathon_gamification/achievement_observer</class>
+                        <method>setAchievement</method>
+                    </hackathon_gamification_achievement>
+                </observers>
+            </hackathon_gamification_achievement>
         </events>
         <layout>
             <updates>
