@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Hackathon_Gamification>
-            <version>0.0.4</version>
+            <version>0.0.5</version>
         </Hackathon_Gamification>
     </modules>
     <global>
@@ -72,6 +72,14 @@
                     </hackathon_gamification>
                 </observers>
             </checkout_cart_add_product_complete>
+            <sales_quote_remove_item>
+                <observers>
+                    <hackathon_gamification>
+                        <class>hackathon_gamification/observer</class>
+                        <method>trackEvent</method>
+                    </hackathon_gamification>
+                </observers>
+            </sales_quote_remove_item>
             <hackathon_gamification_achievement>
                 <observers>
                     <hackathon_gamification_achievement>
