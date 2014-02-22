@@ -10,4 +10,25 @@
         </reference>
         -->
     </default>
+    <adminhtml_gamification_rule_index>
+        <reference name="content">
+            <block type="hackathon_gamification/adminhtml_rule" name="gamification.rule" />
+        </reference>
+    </adminhtml_gamification_rule_index>
+    <adminhtml_gamification_rule_new>
+        <reference name="content">
+            <block type="hackathon_gamification/adminhtml_rule_edit" name="gamification.rule.new"></block>
+        </reference>
+        <reference name="left">
+            <block type="hackathon_gamification/adminhtml_rule_edit_tabs" name="gamification.rule.tabs" />
+        </reference>
+    </adminhtml_gamification_rule_new>
+    <adminhtml_gamification_rule_edit>
+        <reference name="content">
+            <block type="hackathon_gamification/adminhtml_rule_edit" name="gamification.rule.new"></block>
+        </reference>
+        <reference name="left">
+            <block type="hackathon_gamification/adminhtml_rule_edit_tabs" name="gamification.rule.tabs" />
+        </reference>
+    </adminhtml_gamification_rule_edit>
 </layout>

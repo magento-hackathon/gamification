@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <promo>
+            <children>
+                <hackathon_gamification>
+                    <title>Gamification</title>
+                    <sort_order>999</sort_order>
+                    <children>
+                        <manage_rules translate="title" module="hackathon_gamification">
+                            <title>Manage Rules</title>
+                            <sort_order>10</sort_order>
+                            <action>adminhtml/gamification_rule</action>
+                        </manage_rules>
+                    </children>
+                </hackathon_gamification>
+            </children>
+        </promo>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <promo>
+                        <children>
+                            <hackathon_gamification translate="title" module="hackathon_gamification">
+                                <title>Gamification</title>
+                                <children>
+                                    <create_frontend_data translate="title" module="hackathon_gamification">
+                                        <title>Manage Rules</title>
+                                    </create_frontend_data>
+                                </children>
+                            </hackathon_gamification>
+                        </children>
+                    </promo>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

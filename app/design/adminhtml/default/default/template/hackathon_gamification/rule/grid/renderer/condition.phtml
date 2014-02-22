@@ -1,0 +1,16 @@
+
+<?php if (count($this->getCondition()) > 0):?>
+<table>
+    <tbody>
+    <?php foreach($this->getCondition() as $sKey => $sValue):?>
+        <tr>
+            <td><?php echo $sKey;?></td>
+            <td><?php echo $sValue;?></td>
+        </tr>
+    <?php endforeach;?>
+    </tbody>
+</table>
+<?php else:?>
+    <?php echo $this->__('None')?>
+<?php endif;?>
+
