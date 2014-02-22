@@ -20,8 +20,14 @@
 
 class Hackathon_Gamification_Model_Observer 
 {
-    public function catalogProductLoadAfter(Varien_Event_Observer $observer)
+    public function trackEvent(Varien_Event_Observer $observer)
     {
-        $product = $observer->getEvent()->getProduct();
+        $rules = Mage::getModel('hackathon_gamification/rule')->getCollection()
+            ->addFieldToFilter('event_name', $observer->getEvent()->getName());
+        foreach ($rules->getItems() as $rule) {
+            if ($rule->isConditionTrue($observer)) {
+                Mage::log('yeah, execute something');
+            }
+        }
     }
 }

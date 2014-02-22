@@ -65,6 +65,16 @@
            </hackathon_gamification>
         </routers>
         -->
+        <events>
+            <checkout_cart_add_product_complete>
+                <observers>
+                    <hackathon_gamification>
+                        <class>hackathon_gamification/observer</class>
+                        <method>trackEvent</method>
+                    </hackathon_gamification>
+                </observers>
+            </checkout_cart_add_product_complete>
+        </events>
         <layout>
             <updates>
                 <hackathon_gamification>
