@@ -29,7 +29,9 @@ class Hackathon_Gamification_Helper_Rule extends Mage_Core_Helper_Abstract
         $alias = (string)Mage::getConfig()->getNode('global/hackathon_gamification/events/' . $sEventName . '/condition_form');
         if ($alias) {
             $block = Mage::app()->getLayout()->createBlock(trim($alias));
-            return $block->getForm();
+            if ($block) {
+                return $block->getForm();
+            }
         }
         return null;
     }
