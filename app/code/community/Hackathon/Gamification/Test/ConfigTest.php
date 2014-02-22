@@ -77,7 +77,7 @@ class Hackathon_Gamification_Test_ConfigTest extends EcomDev_PHPUnit_Test_Case_C
 
     public function testVersionIsCoveredByUnitTests()
     {
-        $this->assertModuleVersion('0.0.4');
+        $this->assertModuleVersion('0.0.6');
     }
 
     public function testLayoutIsAddedToFrontendAndBackend()

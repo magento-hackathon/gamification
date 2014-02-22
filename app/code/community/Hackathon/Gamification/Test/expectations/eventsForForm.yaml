@@ -1,0 +1,7 @@
+checkout_cart_add_product_complete:
+  label: Put product in cart
+  condition_form: hackathon_gamification/adminhtml_rule_event_cart_add
+sales_quote_remove_item:
+  label: Remove product from cart
+  condition_form:
+  validator: hackathon_gamification/validator_score_min
