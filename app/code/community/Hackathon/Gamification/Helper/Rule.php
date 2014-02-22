@@ -22,4 +22,16 @@ class Hackathon_Gamification_Helper_Rule extends Mage_Core_Helper_Abstract
             return $form;
         }
     }
+
+    public function getAchievementModelsForForm() {
+        $return = array();
+        $achievements = Mage::getConfig()->getNode('global/hackathon_gamification/achievements');
+        foreach ($achievements as $configNode) {
+            $return[] = array(
+                'value' => (string)$configNode->class,
+                'label' => (string)$configNode->label,
+            );
+        }
+        return $return;
+    }
 }
