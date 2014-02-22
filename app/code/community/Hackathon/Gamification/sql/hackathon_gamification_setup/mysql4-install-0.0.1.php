@@ -6,7 +6,7 @@ $oInstaller = $this;
 $oInstaller->startSetup();
 
 /**
- * Create table senator_weltenbauer_product
+ * Create table hackathon_gamification_rule
  */
 $oTable = $oInstaller->getConnection()
     ->newTable($oInstaller->getTable('hackathon_gamification_rule'))
