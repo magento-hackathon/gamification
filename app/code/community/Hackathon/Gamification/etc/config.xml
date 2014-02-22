@@ -17,14 +17,22 @@
         <models>
             <hackathon_gamification>
                 <class>Hackathon_Gamification_Model</class>
+                <resourceModel>hackathon_gamification_resource</resourceModel>
             </hackathon_gamification>
+            <hackathon_gamification_resource>
+                <class>Hackathon_Gamification_Model_Resource</class>
+                <entities>
+                    <rule>
+                        <table>hackathon_gamification_rule</table>
+                    </rule>
+                </entities>
+            </hackathon_gamification_resource>
         </models>
         <helpers>
             <hackathon_gamification>
                 <class>Hackathon_Gamification_Helper</class>
             </hackathon_gamification>
         </helpers>
-        <!--
         <resources>
             <hackathon_gamification_setup>
                 <setup>
@@ -32,7 +40,6 @@
                 </setup>
             </hackathon_gamification_setup>
         </resources>
-        -->
         <!--
         <events>
             <catalog_product_load_after>
