@@ -54,7 +54,7 @@ Uninstallation
 
 ToDo & Ideas
 ------------
-- Manage rules and achievements in adminhtml backend
+- Show event labels in grid instead of cryptic event names
 - store scores in database
 
 Support
