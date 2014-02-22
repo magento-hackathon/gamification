@@ -42,7 +42,7 @@ To add a new achievement which can be configured use following sample:
         <achievements>
             <score_set>
                 <label>Set absolute score</label>
-                <class>hackathon_gamification/achievement_score_set</class>
+                <class>hackathon_gamification/achievement_score_set</class> <!-- implement a getForm method on this model, to have a custom form in the adminhtml to add some custom data to this achievement, like the value of score or what badge should be changed -->
             </score_set>
         </achievements>
     </hackathon_gamification>
