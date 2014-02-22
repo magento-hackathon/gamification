@@ -6,4 +6,7 @@ class Hackathon_Gamification_Model_Achievement_Score_Set extends Mage_Core_Model
         $session->setAchievementScore($achievementData->value);
     }
 
+    public function getForm() {
+        return Mage::getModel('hackathon_gamification/achievement_score_set_form');
+    }
 }

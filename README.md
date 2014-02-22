@@ -34,13 +34,15 @@ To track a new event you have to add following snippet for your event in the con
 
 To make a new event manageable in the adminhtml add following to global node:
 
-    <hackathon_gamification_events>
-        <sales_quote_remove_item>
-            <label>Remove product from cart</label>
-            <condition_form /> <!-- conditions form in adminhtml -->
-            <validator>hackathon_gamification/validator_score_min</validator> <!-- i.e. do not go into a negative score range -->
-        </sales_quote_remove_item>
-    </hackathon_gamification_events>
+    <hackathon_gamification>
+        <events>
+            <sales_quote_remove_item>
+                <label>Remove product from cart</label>
+                <condition_form /> <!-- conditions form in adminhtml -->
+                <validator>hackathon_gamification/validator_score_min</validator> <!-- i.e. do not go into a negative score range -->
+            </sales_quote_remove_item>
+        </events>
+    </hackathon_gamification>
 
 Uninstallation
 --------------

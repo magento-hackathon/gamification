@@ -50,23 +50,43 @@
                 </observers>
             </model_save_after>
         </events>
-        <hackathon_gamification_events>
-            <checkout_cart_add_product_complete>
-                <label>Put product in cart</label>
-                <condition_form />
-                <validator />
-            </checkout_cart_add_product_complete>
-            <sales_quote_remove_item>
-                <label>Remove product from cart</label>
-                <condition_form />
-                <validator>hackathon_gamification/validator_score_min</validator>
-            </sales_quote_remove_item>
-            <controller_action_predispatch_catalogsearch_result_index>
-                <label>Search query</label>
-                <condition_form />
-                <validator>hackathon_gamification/validator_search_query</validator>
-            </controller_action_predispatch_catalogsearch_result_index>
-        </hackathon_gamification_events>
+        <hackathon_gamification>
+            <events>
+                <checkout_cart_add_product_complete>
+                    <label>Put product in cart</label>
+                    <condition_form />
+                    <validator />
+                </checkout_cart_add_product_complete>
+                <sales_quote_remove_item>
+                    <label>Remove product from cart</label>
+                    <condition_form />
+                    <validator>hackathon_gamification/validator_score_min</validator>
+                </sales_quote_remove_item>
+                <controller_action_predispatch_catalogsearch_result_index>
+                    <label>Search query</label>
+                    <condition_form />
+                    <validator>hackathon_gamification/validator_search_query</validator>
+                </controller_action_predispatch_catalogsearch_result_index>
+            </events>
+            <achievements>
+                <score_increment>
+                    <label>Increment score</label>
+                    <class>hackathon_gamification/achievement_score_increment</class>
+                </score_increment>
+                <score_decrement>
+                    <label>Decrement score</label>
+                    <class>hackathon_gamification/achievement_score_decrement</class>
+                </score_decrement>
+                <badge>
+                    <label>Gain badge</label>
+                    <class>hackathon_gamification/achievement_badge</class>
+                </badge>
+                <score_set>
+                    <label>Set absolute score</label>
+                    <class>hackathon_gamification/achievement_score_set</class>
+                </score_set>
+            </achievements>
+        </hackathon_gamification>
     </global>
     <frontend>
         <!--
