@@ -89,7 +89,7 @@
         </hackathon_gamification>
     </global>
     <frontend>
-       <events>
+        <events>
             <checkout_cart_add_product_complete>
                 <observers>
                     <hackathon_gamification>
