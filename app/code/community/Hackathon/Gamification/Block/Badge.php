@@ -18,7 +18,7 @@
  * @generator   http://www.mgt-commerce.com/kickstarter/ Mgt Kickstarter
  */
 
-class Hackathon_Gamification_Block_MyBlock extends Mage_Core_Block_Template
+class Hackathon_Gamification_Block_Badge extends Mage_Core_Block_Template
 {
-
+    protected $_template = 'hackathon_gamification/badge.phtml';
 }
