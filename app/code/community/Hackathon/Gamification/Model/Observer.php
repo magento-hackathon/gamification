@@ -35,7 +35,7 @@ class Hackathon_Gamification_Model_Observer
             ->addFieldToFilter('event_name', $observer->getEvent()->getName());
         foreach ($rules->getItems() as $rule) {
             if ($rule->validate($observer)) {
-                $rule->getAchievement()->gain();
+                $rule->getAchievement()->gain(json_decode($rule->getAchievementData()));
             }
         }
     }

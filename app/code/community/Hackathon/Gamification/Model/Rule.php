@@ -15,7 +15,7 @@ class Hackathon_Gamification_Model_Rule extends Mage_Core_Model_Abstract
         $validatorAlias = (string)Mage::getConfig()->getNode('global/hackathon_gamification_events/' . $this->getEventName())->validator;
         if ($validatorAlias) {
             $validator = Mage::getModel($validatorAlias);
-            return $validator->validate();
+            return $validator->validate(json_decode($this->getCondition()));
         }
         return true;
     }

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Hackathon_Gamification>
-            <version>0.0.5</version>
+            <version>0.0.6</version>
         </Hackathon_Gamification>
     </modules>
     <global>
@@ -61,6 +61,11 @@
                 <condition_form />
                 <validator>hackathon_gamification/validator_score_min</validator>
             </sales_quote_remove_item>
+            <controller_action_predispatch_catalogsearch_result_index>
+                <label>Search query</label>
+                <condition_form />
+                <validator>hackathon_gamification/validator_search_query</validator>
+            </controller_action_predispatch_catalogsearch_result_index>
         </hackathon_gamification_events>
     </global>
     <frontend>
@@ -92,6 +97,14 @@
                     </hackathon_gamification>
                 </observers>
             </sales_quote_remove_item>
+            <controller_action_predispatch_catalogsearch_result_index>
+                <observers>
+                    <hackathon_gamification>
+                        <class>hackathon_gamification/observer</class>
+                        <method>trackEvent</method>
+                    </hackathon_gamification>
+                </observers>
+            </controller_action_predispatch_catalogsearch_result_index>
             <hackathon_gamification_achievement>
                 <observers>
                     <hackathon_gamification_achievement>
