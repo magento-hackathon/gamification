@@ -54,7 +54,7 @@
             <events>
                 <checkout_cart_add_product_complete>
                     <label>Put product in cart</label>
-                    <condition_form>hackathon_gamification/adminhtml_rule_event_cart_add</condition_form>
+                    <condition_form />
                     <validator />
                 </checkout_cart_add_product_complete>
                 <sales_quote_remove_item>
