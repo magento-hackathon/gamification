@@ -9,14 +9,6 @@ Vision
 ------
 If we do this the customers will be longer in the shop and buy more stuff.
 
-Requirements
-------------
-tbd
-
-Compatibility
--------------
-tbd
-
 Installation Instructions
 -------------------------
 Just install module, there's a sample data added, which gains you some nice ponys whenever you add something into the cart.
