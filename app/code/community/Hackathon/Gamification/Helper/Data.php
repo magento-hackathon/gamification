@@ -20,5 +20,40 @@
 
 class Hackathon_Gamification_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    /**
+     * Store a line to the badges.
+     *
+     * @param string $message
+     */
+    public function appendBadge($message)
+    {
+        $badgeMessages = Mage::registry('hackathon_gamification_messages');
+        $badgeMessages[] = $message;
+        Mage::register('hackathon_gamification_messages', $badgeMessages);
 
+        return $this;
+    }
+
+    /**
+     * Retrieve the current stored badge messages.
+     *
+     * @return mixed
+     */
+    public function getBadges()
+    {
+        return Mage::registry('hackathon_gamification_messages');
+    }
+
+    /**
+     * Increase or decrease the score of a customer
+     * @param $value
+     */
+    public function addCustomerScore($value)
+    {
+        // $customer = Mage::getModel('customer/session')->getCustomer();
+        // $score = $customer->getGamificationScore() + $value;
+        // $customer->getCustomer()->setGamificationScore($score);
+
+        return $this;
+    }
 }

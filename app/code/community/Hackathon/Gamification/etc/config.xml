@@ -40,18 +40,16 @@
                 </setup>
             </hackathon_gamification_setup>
         </resources>
-        <!--
         <events>
-            <catalog_product_load_after>
+            <model_save_after>
                 <observers>
                     <hackathon_gamification>
                         <class>hackathon_gamification/observer</class>
-                        <method>catalogProductLoadAfter</method>
+                        <method>modelSaveAfter</method>
                     </hackathon_gamification>
                 </observers>
-            </catalog_product_load_after>
+            </model_save_after>
         </events>
-        -->
     </global>
     <frontend>
         <!--
@@ -65,6 +63,24 @@
            </hackathon_gamification>
         </routers>
         -->
+        <events>
+            <checkout_cart_add_product_complete>
+                <observers>
+                    <hackathon_gamification>
+                        <class>hackathon_gamification/observer</class>
+                        <method>trackEvent</method>
+                    </hackathon_gamification>
+                </observers>
+            </checkout_cart_add_product_complete>
+            <hackathon_gamification_achievement>
+                <observers>
+                    <hackathon_gamification_achievement>
+                        <class>hackathon_gamification/achievement_observer</class>
+                        <method>setAchievement</method>
+                    </hackathon_gamification_achievement>
+                </observers>
+            </hackathon_gamification_achievement>
+        </events>
         <layout>
             <updates>
                 <hackathon_gamification>
