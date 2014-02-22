@@ -54,7 +54,6 @@ Uninstallation
 
 ToDo & Ideas
 ------------
-- Show event labels in grid instead of cryptic event names
 - add dynamic form to have achievement data manageable in adminhtml
 - store scores in database
 - add more achievements and events/rules
