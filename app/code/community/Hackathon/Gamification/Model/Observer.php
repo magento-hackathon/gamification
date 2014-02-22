@@ -45,19 +45,5 @@ class Hackathon_Gamification_Model_Observer
             }
         }
     }
-
-    public function hackathonGamificationAchievement(Varien_Event_Observer $observer)
-    {
-        $rule = $observer->getRule();
-        $helper = Mage::helper('hackathon_gamification/data');
-
-        if ($rule->getCondition()->getBadge() != '') { // badge has text: add it
-            $helper->appendBadge($rule->getCondition()->getBadge());
-        }
-
-        if ($rule->getCondition()->getScore() != 0) { // score is set: apply it
-            $helper->addScore($rule->getCondition()->getScore());
-        }
-    }
 }
 
