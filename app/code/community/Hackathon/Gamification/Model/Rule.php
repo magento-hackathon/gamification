@@ -12,7 +12,11 @@ class Hackathon_Gamification_Model_Rule extends Mage_Core_Model_Abstract
     }
 
     public function validate() {
-        // TODO validate the information in the condition column
+        $validatorAlias = (string)Mage::getConfig()->getNode('global/hackathon_gamification_events/' . $this->getEventName())->validator;
+        if ($validatorAlias) {
+            $validator = Mage::getModel($validatorAlias);
+            return $validator->validate();
+        }
         return true;
     }
 

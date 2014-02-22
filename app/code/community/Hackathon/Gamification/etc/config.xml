@@ -50,6 +50,18 @@
                 </observers>
             </model_save_after>
         </events>
+        <hackathon_gamification_events>
+            <checkout_cart_add_product_complete>
+                <label>Put product in cart</label>
+                <condition_form />
+                <validator />
+            </checkout_cart_add_product_complete>
+            <sales_quote_remove_item>
+                <label>Remove product from cart</label>
+                <condition_form />
+                <validator>hackathon_gamification/validator_score_min</validator>
+            </sales_quote_remove_item>
+        </hackathon_gamification_events>
     </global>
     <frontend>
         <!--

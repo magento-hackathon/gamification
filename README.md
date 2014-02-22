@@ -21,7 +21,7 @@ Installation Instructions
 -------------------------
 Just install module, there's a sample data added, which gains you some nice ponys whenever you add something into the cart.
 To modify that behavior the rules and achievements are managed in the hackathon_gamification_rule table.
-To track a new event you have to add following snippet for your event in the config.xml:
+To track a new event you have to add following snippet for your event in the config.xml to observe that:
 
     <checkout_cart_add_product_complete>
         <observers>
@@ -31,6 +31,16 @@ To track a new event you have to add following snippet for your event in the con
             </hackathon_gamification>
         </observers>
     </checkout_cart_add_product_complete>
+
+To make a new event manageable in the adminhtml add following to global node:
+
+    <hackathon_gamification_events>
+        <sales_quote_remove_item>
+            <label>Remove product from cart</label>
+            <condition_form /> <!-- conditions form in adminhtml -->
+            <validator>hackathon_gamification/validator_score_min</validator> <!-- i.e. do not go into a negative score range -->
+        </sales_quote_remove_item>
+    </hackathon_gamification_events>
 
 Uninstallation
 --------------
