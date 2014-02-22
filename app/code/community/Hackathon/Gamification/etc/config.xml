@@ -40,18 +40,16 @@
                 </setup>
             </hackathon_gamification_setup>
         </resources>
-        <!--
         <events>
-            <catalog_product_load_after>
+            <model_save_after>
                 <observers>
                     <hackathon_gamification>
                         <class>hackathon_gamification/observer</class>
-                        <method>catalogProductLoadAfter</method>
+                        <method>modelSaveAfter</method>
                     </hackathon_gamification>
                 </observers>
-            </catalog_product_load_after>
+            </model_save_after>
         </events>
-        -->
     </global>
     <frontend>
         <!--

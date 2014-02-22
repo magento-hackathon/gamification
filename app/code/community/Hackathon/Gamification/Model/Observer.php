@@ -20,6 +20,39 @@
 
 class Hackathon_Gamification_Model_Observer 
 {
+    /**
+     * Apply rules when a model is saved
+     */
+    public function modelSaveAfter()
+    {
+        $ruleCollection = Mage::getModel('hackathon_gamification/rule')->getCollection();
+        $ruleCollection->addFieldToFilter('event_name', 'model_save_after');
+
+        foreach ($ruleCollection as $singleRule)
+        {
+            $helper = Mage::helper('hackathon_gamification/data');
+            $condition = $singleRule->getCondition();
+            // test against assertions
+            if (
+                (Mage::getSingleton('customer/session')->getCustomerGroupId() != $singleRule->getCustomerGroupId())
+                || !$helper->evaluateCondition($condition)
+            )
+            {
+                continue;
+            }
+
+            if ($condition['badge'] != '')
+            { // badge has text: add it
+                $helper->appendBadge($condition['badge']);
+            }
+
+            if ($condition['score'] != 0)
+            { // score is set: apply it
+                $helper->addScore($condition['score']);
+            }
+        }
+    }
+
     public function trackEvent(Varien_Event_Observer $observer)
     {
         $rules = Mage::getModel('hackathon_gamification/rule')->getCollection()
@@ -31,3 +64,4 @@ class Hackathon_Gamification_Model_Observer
         }
     }
 }
+
