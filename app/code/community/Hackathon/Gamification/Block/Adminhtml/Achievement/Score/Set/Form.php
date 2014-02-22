@@ -1,5 +1,5 @@
 <?php
-class Hackathon_Gamification_Block_Achievement_Score_Set_Form extends Varien_Data_Form
+class Hackathon_Gamification_Block_Adminhtml_Achievement_Score_Set_Form extends Varien_Data_Form
 {
     protected function _construct() {
         $fieldset = $this->addFieldset('form', array('legend'=>'Achievement Data'));
