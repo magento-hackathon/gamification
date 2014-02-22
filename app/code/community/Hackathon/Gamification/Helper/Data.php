@@ -30,6 +30,8 @@ class Hackathon_Gamification_Helper_Data extends Mage_Core_Helper_Abstract
         $badgeMessages = Mage::registry('hackathon_gamification_messages');
         $badgeMessages[] = $message;
         Mage::register('hackathon_gamification_messages', $badgeMessages);
+
+        return $this;
     }
 
     /**
@@ -51,16 +53,7 @@ class Hackathon_Gamification_Helper_Data extends Mage_Core_Helper_Abstract
         // $customer = Mage::getModel('customer/session')->getCustomer();
         // $score = $customer->getGamificationScore() + $value;
         // $customer->getCustomer()->setGamificationScore($score);
-    }
 
-    /**
-     * Parses and checks if a condition is true.
-     *
-     * @param array $condition
-     * @return bool
-     */
-    public function evaluateCondition($condition)
-    {
-        return false;
+        return $this;
     }
 }

@@ -23,39 +23,15 @@ class Hackathon_Gamification_Model_Observer
     /**
      * Apply rules when a model is saved
      */
-    public function modelSaveAfter()
+    public function modelSaveAfter(Varien_Event_Observer $observer)
     {
-        $ruleCollection = Mage::getModel('hackathon_gamification/rule')->getCollection();
-        $ruleCollection->addFieldToFilter('event_name', 'model_save_after');
-
-        foreach ($ruleCollection as $singleRule)
-        {
-            $helper = Mage::helper('hackathon_gamification/data');
-            $condition = $singleRule->getCondition();
-            // test against assertions
-            if (
-                (Mage::getSingleton('customer/session')->getCustomerGroupId() != $singleRule->getCustomerGroupId())
-                || !$helper->evaluateCondition($condition)
-            )
-            {
-                continue;
-            }
-
-            if ($condition['badge'] != '')
-            { // badge has text: add it
-                $helper->appendBadge($condition['badge']);
-            }
-
-            if ($condition['score'] != 0)
-            { // score is set: apply it
-                $helper->addScore($condition['score']);
-            }
-        }
+        $this->trackEvent($observer);
     }
 
     public function trackEvent(Varien_Event_Observer $observer)
     {
-        $rules = Mage::getModel('hackathon_gamification/rule')->getCollection()
+        $rules = Mage::getModel('hackathon_gamification/rule')
+            ->getCollection()
             ->addFieldToFilter('event_name', $observer->getEvent()->getName());
         foreach ($rules->getItems() as $rule) {
             // TODO check that user not already gained that achievement
@@ -67,6 +43,20 @@ class Hackathon_Gamification_Model_Observer
                     )
                 );
             }
+        }
+    }
+
+    public function hackathonGamificationAchievement(Varien_Event_Observer $observer)
+    {
+        $rule = $observer->getRule();
+        $helper = Mage::helper('hackathon_gamification/data');
+
+        if ($rule->getCondition()->getBadge() != '') { // badge has text: add it
+            $helper->appendBadge($rule->getCondition()->getBadge());
+        }
+
+        if ($rule->getCondition()->getScore() != 0) { // score is set: apply it
+            $helper->addScore($rule->getCondition()->getScore());
         }
     }
 }
