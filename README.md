@@ -40,7 +40,10 @@ Uninstallation
 ToDo & Ideas
 ------------
 - Manage rules and achievements in adminhtml backend
-- Implement condition rules (i.e. need a product from every category or check that user did not already get that achievement)
+- Implement condition rules
+-- need a product from every category
+-- aggregate logged events from hackathon_frontendmonitoring (i.e. gain an achievement after 5 actions)
+-- check that user did not already get that achievement
 - store scores in database
 - Implement achievement data (i.e. set different scores for different events)
 
