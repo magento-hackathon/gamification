@@ -50,12 +50,7 @@ Uninstallation
 ToDo & Ideas
 ------------
 - Manage rules and achievements in adminhtml backend
-- Implement condition rules
--- need a product from every category
--- aggregate logged events from hackathon_frontendmonitoring (i.e. gain an achievement after 5 actions)
--- check that user did not already get that achievement
 - store scores in database
-- Implement achievement data (i.e. set different scores for different events)
 
 Support
 -------
@@ -68,3 +63,5 @@ Any contribution is highly appreciated. The best way to contribute code is to op
 License
 -------
 [GNU General Public License, version 3 (GPLv3)](http://opensource.org/licenses/gpl-3.0)
+
+PS: search for "iloveponys" in your magento search after installing this module ;)
