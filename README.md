@@ -37,6 +37,13 @@ Uninstallation
 - Remove all files
 - Delete table hackathon_gamification_rule
 
+ToDo & Ideas
+------------
+- Manage rules and achievements in adminhtml backend
+- Implement condition rules (i.e. need a product from every category or check that user did not already get that achievement)
+- store scores in database
+- Implement achievement data (i.e. set different scores for different events)
+
 Support
 -------
 If you have any issues with this extension, open an issue on [GitHub](https://github.com/magento-hackathon/gamification/issues).

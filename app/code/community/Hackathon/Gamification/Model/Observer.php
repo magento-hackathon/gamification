@@ -34,7 +34,6 @@ class Hackathon_Gamification_Model_Observer
             ->getCollection()
             ->addFieldToFilter('event_name', $observer->getEvent()->getName());
         foreach ($rules->getItems() as $rule) {
-            // TODO check that user not already gained that achievement
             if ($rule->validate($observer)) {
                 $rule->getAchievement()->gain();
             }
