@@ -1,2 +1,8 @@
 -
-  - 1337
+  -
+    event_name: model_save_after
+    achievement_model: hackathon_gamification/achievement_score_set
+    condition:
+      query: iloveponys
+    achievement_data:
+      value: 1337

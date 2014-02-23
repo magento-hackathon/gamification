@@ -1,0 +1,6 @@
+model_save_after:
+  event_name: model_save_after
+  customer_group_id: 0
+  condition: '{"query":"iloveponys"}'
+  achievement_model: hackathon_gamification/achievement_score_set
+  achievement_data: '{"value":1337}'
