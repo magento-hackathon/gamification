@@ -47,7 +47,6 @@ Uninstallation
 
 ToDo & Ideas
 ------------
-- add dynamic form to have achievement data manageable in adminhtml
 - store scores in database
 - add more achievements and events/rules
 - add connection to frontendmonitoring module, to track page views etc.
