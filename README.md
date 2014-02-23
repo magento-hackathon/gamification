@@ -15,7 +15,7 @@ Just install module, there's a sample data added, which gains you some nice pony
 To modify that behavior the rules and achievements are managed in the hackathon_gamification_rule table.
 To track a new event you have to add following snippet for your event in the config.xml to observe that:
 
-    <frontend> <!-- we only consider observers in frontend, we don'T want gamification in adminhtml (yet) -->
+    <frontend> <!-- we only consider observers in frontend, we don't want gamification in adminhtml (yet) -->
         <controller_action_predispatch_catalogsearch_result_index>
             <observers>
                 <hackathon_gamification> <!-- it has to be that name -->
