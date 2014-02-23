@@ -79,6 +79,18 @@ class Hackathon_Gamification_Block_Adminhtml_Rule_Grid extends Mage_Adminhtml_Bl
             )
         );
 
+        $this->addColumn(
+            'achievement_data',
+            array(
+                'header' => Mage::helper('hackathon_gamification')
+                        ->__('Achievement Data'),
+                'align'    => 'left',
+                'index'    => 'achievement_data',
+                'filter'   => false,
+                'sortable' => false,
+                'renderer' => 'hackathon_gamification/adminhtml_rule_grid_renderer_achievement_data'
+            )
+        );
 
         $this->addColumn(
             'action',

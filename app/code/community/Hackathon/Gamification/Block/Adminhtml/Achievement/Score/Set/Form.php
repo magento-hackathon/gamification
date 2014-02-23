@@ -1,16 +1,17 @@
 <?php
 class Hackathon_Gamification_Block_Adminhtml_Achievement_Score_Set_Form extends Mage_Core_Block_Abstract
 {
-    protected function _construct() {
-        $fieldset = $this->addFieldset('form', array('legend'=>'Achievement Data'));
+    public function getForm(Varien_Data_Form $oForm)
+    {
+        $fieldset = $oForm->addFieldset('form', array('legend'=>'Achievement Data'));
 
-         $fieldset->addField('value', 'text', array(
-             'label'     => 'Score value',
-             'class'     => 'required-entry validate-digits',
-             'required'  => true,
-             'name'      => 'value',
-         ));
+        $fieldset->addField('achievement_data[value]', 'text', array(
+            'label'     => 'Score value',
+            'class'     => 'required-entry validate-digits',
+            'required'  => true,
+            'name'      => 'achievement_data[value]',
+        ));
 
-        return parent::_construct();
+        return $oForm;
     }
 }

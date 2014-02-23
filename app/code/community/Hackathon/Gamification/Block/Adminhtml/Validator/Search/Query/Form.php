@@ -12,13 +12,13 @@ class Hackathon_Gamification_Block_Adminhtml_Validator_Search_Query_Form extends
         );
 
         $oFieldset->addField(
-            'query',
+            'condition[query]',
             'text',
             array(
                 'label'    => Mage::helper('hackathon_gamification')->__('Searchword'),
                 'class'    => 'required-entry',
                 'required' => true,
-                'name'     => 'query',
+                'name'     => 'condition[query]',
             )
         );
 

@@ -6,7 +6,7 @@ class Hackathon_Gamification_Model_Achievement_Score_Set extends Mage_Core_Model
         $score->set($achievementData->value);
     }
 
-    public function getForm() {
-        return Mage::app()->getLayout()->createBlock('hackathon_gamification/adminhtml_achievement_score_set_form');
+    public function getForm(Varien_Data_Form $oForm) {
+        return Mage::app()->getLayout()->createBlock('hackathon_gamification/adminhtml_achievement_score_set_form')->getForm($oForm);
     }
 }

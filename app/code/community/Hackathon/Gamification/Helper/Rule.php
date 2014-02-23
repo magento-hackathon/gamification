@@ -63,4 +63,15 @@ class Hackathon_Gamification_Helper_Rule extends Mage_Core_Helper_Abstract
         }
         return $return;
     }
+
+    public function getAchievementForm(Varien_Data_Form $oForm, $achievementModel)
+    {
+        $model = Mage::getModel(trim($achievementModel));
+        if ($oFormWithAchievementData = $model->getForm($oForm)) {
+            return $oFormWithAchievementData;
+        } else {
+            return $oForm;
+        }
+        return null;
+    }
 }

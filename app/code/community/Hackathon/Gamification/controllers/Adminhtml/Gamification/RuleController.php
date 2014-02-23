@@ -35,7 +35,8 @@ class Hackathon_Gamification_Adminhtml_Gamification_RuleController extends Mage_
             unset($aPostData['event_name']);
             unset($aPostData['achievement_model']);
             unset($aPostData['form_key']);
-            $aData['condition'] = json_encode($aPostData);
+            $aData['condition'] = json_encode($aPostData['condition']);
+            $aData['achievement_data'] = json_encode($aPostData['achievement_data']);
             $oModel->setData($aData)
                 ->setId(
                     $this
@@ -158,6 +159,21 @@ class Hackathon_Gamification_Adminhtml_Gamification_RuleController extends Mage_
             }
         }
         $this->_redirect('*/*/');
+    }
+
+    public function loadAchievementDataAction()
+    {
+        $iId = $this
+            ->getRequest()
+            ->getParam('id');
+        $oModel = Mage::getModel('hackathon_gamification/rule')->load($iId);
+
+        Mage::register('gamification_rule_data', $oModel);
+
+        $this->getResponse()->setBody(
+            $this->getLayout()->createBlock('hackathon_gamification/adminhtml_rule_edit_tab_achievement', 'configurator.product.grid')
+                ->toHtml()
+        );
     }
 
     public function newAction()

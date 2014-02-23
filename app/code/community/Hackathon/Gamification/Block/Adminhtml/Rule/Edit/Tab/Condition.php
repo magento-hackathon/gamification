@@ -23,8 +23,12 @@ class Hackathon_Gamification_Block_Adminhtml_Rule_Edit_Tab_Condition extends Mag
                 ->getFormData(null);
         } elseif (Mage::registry('gamification_rule_data')) {
             $oModel = Mage::registry('gamification_rule_data');
-            $aValues = json_decode($oModel->getData('condition'), true);
+            $aValues = array();
             $aValues['event_name'] = $oModel->getData('event_name');
+            foreach (json_decode($oModel->getData('condition'), true) as $sKey => $sValue) {
+                $aValues['condition['.$sKey.']'] = $sValue;
+            }
+
             $oForm->setValues($aValues);
 
         }
