@@ -5,10 +5,7 @@ class Hackathon_Gamification_Test_ConfigTest extends EcomDev_PHPUnit_Test_Case_C
     public function testHasBlocksForFrontendAndBackend()
     {
         $this->assertBlockAlias('hackathon_gamification/badge', 'Hackathon_Gamification_Block_Badge');
-
-        $this->markTestIncomplete('there is no class for hackathon_gamification_adminhtml');
-        // $this->assertBlockAlias('hackathon_gamification_adminhtml', 'Hackathon_Gamification_Block_Adminhtml');
-
+        $this->assertBlockAlias('hackathon_gamification_adminhtml/rule', 'Hackathon_Gamification_Block_Adminhtml_Rule');
     }
 
     public function testHasHelper()
