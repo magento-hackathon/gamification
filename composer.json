@@ -3,7 +3,8 @@
     "license": "GPL-3.0",
     "type": "magento-module",
     "description": "The Gamification module allows to track events stored by Hackathon_FrontendMonitoring and release actions like incrementing points, earn badges or cat stickers for a user.",
-    "require": {
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "Allows to manage this package as a dependency"
     },
     "authors":[
     ]
